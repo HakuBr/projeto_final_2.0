@@ -1,0 +1,130 @@
+/* Estilos para o container principal da navegação */
+.navigation-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  background-color: #fff; /* Fundo branco */
+}
+
+/* Estilos para a lista de navegação */
+.nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos para os itens de navegação */
+.nav-item {
+  margin: 0 10px;
+}
+
+/* Estilos para os links de navegação */
+.nav-link {
+  padding: 0.5rem 1rem;
+  color: #1b357e; /* Azul Ford */
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #1351D8; /* Azul mais claro no hover */
+}
+
+.nav-link.active {
+  color: #1351D8;
+  border-bottom: 2px solid #1351D8;
+}
+
+/* Container do botão de logout */
+.logout-container {
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+/* Estilos existentes que devem ser mantidos */
+.offcanvas-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__button {
+  background-image: url("/more.png");
+  width: 3vh;
+  height: 3vh;
+  margin-left: 0.5vh;
+  margin-top: 0.5vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-color: #ffff;
+  cursor: pointer;
+}
+
+.menu {
+  width: 10vw;
+}
+
+.menu__links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.link {
+  width: 100%;
+  padding: 1vw;
+  color: blue;
+  text-decoration: none;
+}
+
+.logout__button {
+  width: 4vh;
+  height: 3.2vh;
+  margin-left: 0.5vh;
+  margin-top: 0.5vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-color: #ffff;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.logout__button:hover {
+  opacity: 0.8;
+}
+
+app-menu {
+  position: static !important; /* Remove qualquer posicionamento absoluto/fixo */
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .navigation-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .logout-container {
+    margin-left: 0;
+    padding-right: 0;
+    width: 100%;
+    text-align: center;
+  }
+}

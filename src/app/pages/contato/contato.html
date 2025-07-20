@@ -1,0 +1,133 @@
+<app-menu></app-menu>
+
+<div class="forms">
+  <div>
+    <h2 class="titulo">Sobre Você</h2>
+
+    <!-- Usando ngForm -->
+    <form (ngSubmit)="onSubmit()" #formulario="ngForm">
+
+      <input
+        type="text"
+        name="nome"
+        [(ngModel)]="formData.nome"
+        placeholder="NOME*"
+        class="fordform"
+        required>
+
+      <input
+        type="text"
+        name="email"
+        [(ngModel)]="formData.email"
+        placeholder="E-MAIL*"
+        class="fordform"
+        required>
+
+      <input
+        type="text"
+        name="cpf"
+        [(ngModel)]="formData.cpf"
+        placeholder="CPF*"
+        class="fordform"
+        required>
+
+      <input
+        type="text"
+        name="sobrenome"
+        [(ngModel)]="formData.sobrenome"
+        placeholder="SOBRENOME*"
+        class="fordform"
+        required>
+
+      <input
+        type="text"
+        name="telefone"
+        [(ngModel)]="formData.telefone"
+        placeholder="TELEFONE*"
+        class="fordform"
+        required>
+
+      <select
+        name="contato"
+        [(ngModel)]="formData.contato"
+        class="fordform"
+        required>
+        <option value="" disabled selected>TIPO DE MENSAGEM</option>
+        <option value="elogio">ELOGIO</option>
+        <option value="reclamacao">RECLAMAÇÃO</option>
+        <option value="solicitacao">SOLICITAÇÃO</option>
+      </select>
+
+      <h2 class="titulo">Mensagem</h2>
+      <textarea
+        name="mensagem"
+        [(ngModel)]="formData.mensagem"
+        class="fordform"
+        rows="4"
+        placeholder="Digite sua mensagem aqui...">
+      </textarea>
+
+      <p class="textLGPD">
+        Os dados serão mantidos em nossa base de dados só enquanto for desejado por você. A qualquer momento será possível editar ou remover tais dados.
+      </p>
+      <a href="https://www.ford.com.br/politica-de-privacidade/" class="textLGPD" target="_blank">Termos e Condições</a>
+      <br>
+
+      <input
+        type="checkbox"
+        name="termos"
+        [(ngModel)]="formData.termos"
+        class="checkbox"
+        required>
+      <span class="textLGPD"> Sim, li e concordo com os vossos termos.</span>
+      <br>
+
+      <input
+        type="checkbox"
+        name="descontos"
+        [(ngModel)]="formData.receberDescontos"
+        class="checkbox">
+      <span class="textLGPD"> Sim, também quero receber descontos e novidades</span>
+      <br><br>
+
+      <button type="submit" id="button">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal Bootstrap Estilizado -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content custom-modal">
+      <div class="modal-header custom-modal-header">
+        <h5 class="modal-title" id="successModalLabel">Sucesso!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body custom-modal-body">
+        Seus dados foram enviados com sucesso. Entraremos em contato em breve!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-modal" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="loginErrorModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content custom-modal">
+      <div class="modal-header custom-modal-header">
+        <h5 class="modal-title" id="modalLabel">Erro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body custom-modal-body">
+        {{ errorMessage }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-modal" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-copy></app-copy>

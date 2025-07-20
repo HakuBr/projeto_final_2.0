@@ -1,0 +1,189 @@
+:host {
+    height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+.btn-primary {
+  background-color: #1b357e;
+  border-color: #1b357e;
+  color: #fff;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #15306e;
+  border-color: #15306e;
+}
+
+
+.main {
+    display: flex;
+    width: 100vw;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f7fa;
+}
+.buttons__nav {
+
+    justify-content: space-between;
+    padding: 0.6vh 0.6vw;
+  }
+
+.main__img {
+    width: 80%;
+}
+
+app-boas-vindas {
+    position: absolute;
+}
+
+.logout__button {
+    background-image: url("/logout.png");
+    width: 4vh;
+    height: 3.2vh;
+    margin-left: 0.5vh;
+    margin-top: 0.5vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    background-color: #ffff;
+}
+
+/* Estilos gerais */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo do carrossel */
+.carousel-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+    border-radius: 10px;
+}
+
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    padding: 15px;
+    bottom: 30px;
+}
+
+/* Estilo dos cards */
+.cards-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card-item {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+}
+
+.card {
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-text {
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.btn-primary {
+    align-self: flex-start;
+    background-color: #0056b3;
+    border: none;
+    padding: 8px 16px;
+}
+
+/* Transição suave das imagens */
+.carousel-item {
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Transição suave para textos */
+.carousel-caption {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.carousel-item.active .carousel-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 250px;
+    }
+
+    .cards-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-item {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+

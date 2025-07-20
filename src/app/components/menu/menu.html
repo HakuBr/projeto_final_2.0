@@ -1,0 +1,20 @@
+<div class="navigation-container">
+  <ul class="nav nav-underline justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/home']" [class.active]="isActive('/home')">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/dashboard" [class.active]="isActive('/dashboard')">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/contato']" [class.active]="isActive('/contato')">Contato</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/lancamento']" [class.active]="isActive('/lancamento')">Lançamento</a>
+    </li>
+  </ul>
+
+  <div class="logout-container">
+    <button (click)="logout()" class="logout__button"><i class="fa-solid fa-right-from-bracket" style="color: blue;"></i></button>
+  </div>
+</div>

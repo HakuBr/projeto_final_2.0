@@ -1,0 +1,124 @@
+/* Container Principal do Formulário de Login */
+.forms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+  padding: 2rem;
+  background-color: #f5f7fa;
+}
+
+/* Logo Ford dentro do formulário */
+.div__login__form__img__logo__img__logo {
+  display: block;
+  margin: 0 auto 1.5rem auto; /* centraliza e adiciona espaço abaixo */
+  max-width: 160px; /* largura máxima da imagem */
+  height: auto;
+}
+
+
+/* Caixa do Formulário */
+.forms > div {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.titulo {
+  color: #1b357e;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Campos de Entrada */
+.fordform {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.fordform:focus {
+  outline: none;
+  border-color: #1b357e;
+  box-shadow: 0 0 0 3px rgba(27, 53, 126, 0.1);
+}
+
+/* Checkbox e Label */
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #1b357e;
+}
+
+/* Botão de Envio */
+#button {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: #1b357e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+#button:hover {
+  background-color: #1351D8;
+  transform: translateY(-2px);
+}
+
+/* Link de cadastro */
+.menu__links a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #1b357e;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.menu__links a:hover {
+  text-decoration: underline;
+  color: #1351D8;
+}
+
+/* Mensagens de erro */
+.text-danger {
+  color: #dc3545;
+  font-size: 0.85rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .forms {
+    padding: 1rem;
+  }
+
+  .forms > div {
+    padding: 1.5rem;
+  }
+}

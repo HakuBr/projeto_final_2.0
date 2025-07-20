@@ -1,0 +1,84 @@
+<div class="forms">
+  <div>
+    <img class="div__login__form__img__logo__img__logo" src="ford.png" alt="Logo Ford" />
+    <h2 class="titulo">Cadastro</h2>
+
+    <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+      <!-- Nome -->
+      <input
+        class="fordform"
+        formControlName="nome"
+        type="text"
+        placeholder="Digite seu nome completo"
+      />
+      <div *ngIf="nome?.invalid && nome?.touched" class="text-danger">
+        Nome é obrigatório.
+      </div>
+
+      <!-- Email -->
+      <input
+        class="fordform"
+        formControlName="email"
+        type="email"
+        placeholder="Digite seu e-mail"
+      />
+      <div *ngIf="email?.invalid && email?.touched" class="text-danger">
+        Email válido é obrigatório.
+      </div>
+
+      <!-- Senha -->
+      <input
+        class="fordform"
+        formControlName="senha"
+        type="password"
+        placeholder="Crie uma senha"
+      />
+      <div *ngIf="senha?.invalid && senha?.touched" class="text-danger">
+        Senha deve ter no mínimo 6 caracteres.
+      </div>
+
+      <!-- LGPD -->
+      <p class="textLGPD">
+        Os dados serão mantidos em nossa base enquanto for desejado por você. Você poderá editá-los ou removê-los a qualquer momento.
+      </p>
+      <a href="https://www.ford.com.br/politica-de-privacidade/" target="_blank" class="textLGPD">
+        Termos e Condições
+      </a>
+
+      <div class="form-check mb-3">
+        <input
+          class="form-check-input checkbox"
+          type="checkbox"
+          id="termos"
+          formControlName="termos"
+        />
+        <label class="form-check-label" for="termos">
+          Sim, li e concordo com os termos.
+        </label>
+      </div>
+
+      <!-- Botão -->
+      <button type="submit" id="button" [disabled]="cadastroForm.invalid">
+        Cadastrar
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal de Sucesso -->
+<div class="modal fade" id="cadastroSuccessModal" tabindex="-1" aria-labelledby="cadastroSuccessLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content custom-modal">
+      <div class="modal-header custom-modal-header">
+        <h5 class="modal-title" id="cadastroSuccessLabel">Cadastro Realizado</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body custom-modal-body">
+        Cadastro realizado com sucesso! Redirecionando para o login...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-modal" data-bs-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>

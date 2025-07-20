@@ -1,0 +1,50 @@
+.rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.7%;
+  background-color: white; /* Fundo branco */
+  border-top: 1px solid #e0e0e0; /* Borda sutil no topo */
+}
+
+.rodape__esquerda {
+  display: flex;
+  align-items: center;
+}
+
+.rodape__redes__sociais {
+  font-family: Arial, sans-serif;
+  color: #1b357e; /* Azul Ford para o texto */
+  margin-right: 10px;
+  font-size: 1rem;
+  font-weight: 500; /* Adiciona um pouco de peso */
+}
+
+.rodape__imagem {
+  display: inline-block;
+  margin: 0 5px;
+  filter: brightness(0) saturate(100%) invert(10%) sepia(90%) saturate(2000%) hue-rotate(220deg) brightness(90%) contrast(90%); /* Transforma ícones em azul */
+}
+
+.rodape__imagem__logo {
+  height: 50px;
+  margin-left: auto;
+  filter: none; /* Mantém a cor original ou ajuste conforme necessário */
+}
+
+.copy {
+  font-family: Arial, sans-serif;
+  color: #1b357e; /* Azul Ford */
+  text-align: center;
+  margin: 0 15px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Efeitos hover para interatividade */
+.rodape__imagem:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}

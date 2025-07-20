@@ -1,0 +1,112 @@
+<!-- Lista de carros -->
+ <app-menu></app-menu>
+
+ <div>
+  <iframe style="display: block; margin-bottom: 30px; margin-left: auto; margin-right: auto; width: 100%; height: 500px;"
+    src="https://www.youtube-nocookie.com/embed/vQsryuNmsL0?controls=0&autoplay=1&modestbranding=0&loop=1&mute=1&rel=0&hd=1"
+    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+</div>
+<div>
+  <ul class="modelcars">
+    <li *ngFor="let car of cars">
+      <img [src]="car.image" alt="Imagem do modelo" class="photocar" />
+      <div class="infocar">
+        <div>
+          <input
+            type="checkbox"
+            [value]="car.nome"
+            class="checkbox"
+            (change)="setCarToCompare($event, car)"
+            [checked]="isCarSelected(car)"
+            [disabled]="carArr.length === 2 && !isCarSelected(car)"
+          />
+        </div>
+        <div class="info">
+          <span class="textmodel">{{ car.nome }}</span>
+          <span class="textprice">Preço Sugerido: R$ {{ car.preco | currency: 'BRL' }}</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Botão de comparação -->
+<div class="text-center my-4">
+  <button
+    class="btn btn-primary"
+    [disabled]="carArr.length !== 2"
+    data-bs-toggle="modal"
+    data-bs-target="#compareModal"
+    (click)="showCompare()"
+  >
+    Comparar Carros
+  </button>
+</div>
+
+<!-- Modal de Comparação (sem alteração) -->
+<div class="modal fade" id="compareModal" tabindex="-1" aria-labelledby="compareModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="compareModalLabel">Comparação de Modelos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th *ngFor="let car of carArr">
+                <img [src]="car.image" class="car-comparison-img" alt="Imagem do carro" />
+              </th>
+            </tr>
+            <tr>
+              <th>Modelo</th>
+              <th *ngFor="let car of carArr">{{ car.nome }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Altura da caçamba (mm)</td>
+              <td *ngFor="let car of carArr">{{ car.alturaCacamba }} mm</td>
+            </tr>
+            <tr>
+              <td>Altura do veículo (mm)</td>
+              <td *ngFor="let car of carArr">{{ car.alturaVeiculo }} mm</td>
+            </tr>
+            <tr>
+              <td>Altura livre do solo (mm)</td>
+              <td *ngFor="let car of carArr">{{ car.alturaSolo }} mm</td>
+            </tr>
+            <tr>
+              <td>Capacidade de carga (kg)</td>
+              <td *ngFor="let car of carArr">{{ car.capacidadeCarga }} kg</td>
+            </tr>
+            <tr>
+              <td>Motor</td>
+              <td *ngFor="let car of carArr">{{ car.motor }}</td>
+            </tr>
+            <tr>
+              <td>Potência (cv)</td>
+              <td *ngFor="let car of carArr">{{ car.potencia }} cv</td>
+            </tr>
+            <tr>
+              <td>Volume de caçamba (L)</td>
+              <td *ngFor="let car of carArr">{{ car.volumeCacamba }} L</td>
+            </tr>
+            <tr>
+              <td>Roda</td>
+              <td *ngFor="let car of carArr">{{ car.roda }}</td>
+            </tr>
+            <tr>
+              <td>Preço</td>
+              <td *ngFor="let car of carArr">R$ {{ car.preco | currency: 'BRL' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<app-copy></app-copy>

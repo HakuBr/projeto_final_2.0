@@ -1,0 +1,76 @@
+<div class="forms">
+
+  <div>
+    <img class="div__login__form__img__logo__img__logo" src="ford.png">
+    <h2 class="titulo">Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="loginJp()">
+
+      <!-- Usuário -->
+      <input
+        class="fordform"
+        formControlName="nome"
+        type="email"
+        id="exampleInputEmail1"
+        placeholder="Insira seu usuário aqui"
+      />
+      <div *ngIf="nome?.invalid && nome?.touched" class="text-danger mt-1">
+        Usuário é obrigatório.
+      </div>
+
+      <!-- Senha -->
+      <input
+        class="fordform"
+        formControlName="senha"
+        type="password"
+        id="exampleInputPassword1"
+        placeholder="Insira sua senha aqui"
+      />
+      <div *ngIf="senha?.invalid && senha?.touched" class="text-danger mt-1">
+        Senha é obrigatória.
+      </div>
+
+      <!-- Checkbox -->
+      <div class="form-check my-2 d-flex align-items-center">
+        <input
+          class="form-check-input checkbox"
+          type="checkbox"
+          id="switchCheckChecked"
+          checked
+        />
+        <label for="switchCheckChecked" class="form-check-label ms-2">
+          Logar automaticamente
+        </label>
+      </div>
+
+      <!-- Botão -->
+      <button id="button" type="submit">Entrar</button>
+
+      <!-- Link para cadastro -->
+      <div class="menu__links mt-3 text-center">
+        <a class="textLGPD" (click)="navigateToCadastro()">
+          Não é cadastrado? <strong>Clique aqui</strong>
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Modal de Erro -->
+<!-- Modal de Erro -->
+<div class="modal fade" id="loginErrorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content custom-modal">
+      <div class="modal-header custom-modal-header">
+        <h5 class="modal-title" id="errorModalLabel">Erro no Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body custom-modal-body">
+        {{ errorMessage }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-modal" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

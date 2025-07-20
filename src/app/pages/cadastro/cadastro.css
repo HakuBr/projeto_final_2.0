@@ -1,0 +1,12 @@
+.logout-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.logout__button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}

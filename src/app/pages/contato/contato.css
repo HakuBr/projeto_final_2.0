@@ -1,0 +1,168 @@
+/* Container Principal */
+.forms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px); /* Ajuste conforme o tamanho do header/footer */
+  padding: 2rem;
+  background-color: #f5f7fa;
+}
+
+/* Container do Formulário */
+.forms > div {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+.titulo {
+  color: #1b357e; /* Azul Ford */
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Campos do Formulário */
+.fordform {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.fordform:focus {
+  outline: none;
+  border-color: #1b357e;
+  box-shadow: 0 0 0 3px rgba(27, 53, 126, 0.1);
+}
+
+select.fordform {
+  color: #6b7280;
+  height: auto;
+  padding: 0.75rem;
+}
+
+textarea.fordform {
+  height: 120px;
+  resize: vertical;
+}
+
+/* Checkboxes */
+.checkbox {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  vertical-align: middle;
+  accent-color: #1b357e;
+}
+
+/* Texto LGPD */
+.textLGPD {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 1rem 0;
+}
+
+.textLGPD a {
+  color: #1b357e;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.textLGPD a:hover {
+  text-decoration: underline;
+}
+
+/* Botão de Envio */
+#button {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: #1b357e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+#button:hover {
+  background-color: #1351D8;
+  transform: translateY(-2px);
+}
+
+/* Controla a visibilidade com transição */
+.modal.fade {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  display: block;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5); /* fundo escuro semi-transparente */
+}
+
+/* Centraliza o modal */
+.modal-dialog {
+  max-width: 500px;
+  margin: 1.75rem auto;
+}
+
+/* Botão de fechar */
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  opacity: 0.6;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.btn-close:hover {
+  opacity: 1;
+}
+
+/* Camada de fundo */
+.modal-backdrop.show {
+  opacity: 0.5;
+}
+
+/* Títulos dentro do modal */
+.custom-modal .modal-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Centraliza botão no rodapé do modal */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .forms {
+    padding: 1rem;
+    align-items: flex-start;
+  }
+
+  .forms > div {
+    padding: 1.5rem;
+  }
+}
