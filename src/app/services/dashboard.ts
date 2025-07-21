@@ -10,11 +10,11 @@ export class DashboardS {
   http = inject(HttpClient)
 
   getVeiculos(): Observable<Veiculo[]>{
-    return this.http.get<Veiculo[]>("http://localhost:3001/vehicles")
+    return this.http.get<Veiculo[]>("https://api-projeto-final-2-0.onrender.com/vehicles")
 
   }
 
   getVinInfos(vin: string){
-    return this.http.post<VinInfos>("http://localhost:3001/vehicleData", {vin})
+    return this.http.post<VinInfos>("https://api-projeto-final-2-0.onrender.com/vehicleData", {vin})
   }
 }
