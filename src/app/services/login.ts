@@ -10,7 +10,7 @@ export class LoginS {
   http = inject(HttpClient)
 
   login( nome: string, senha : string ): Observable<Usuario>{
-    return this.http.post<Usuario>("http://localhost:3001/login", { nome, senha })
+    return this.http.post<Usuario>("https://api-projeto-final-2-0.onrender.com/login", { nome, senha })
     .pipe(
       tap(
         (user) => {
